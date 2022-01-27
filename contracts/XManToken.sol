@@ -6,12 +6,14 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract XManToken is ERC20 {
 
-    uint256 supply = 10000000000000000000000000;
+    uint256 public SUPPLY = 1000000;
 
-    constructor() ERC20("XMan", "XMN") {
+    constructor() ERC20("XManToken", "XMT") {
+        decimals();
+        _mint(msg.sender, SUPPLY);
+    }
 
-        uint256 internalInitialSupply = supply;
-
-        _mint(msg.sender, internalInitialSupply);
+    function decimals() public view virtual override returns (uint8){
+        return 0;
     }
 }
