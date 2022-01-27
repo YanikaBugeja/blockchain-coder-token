@@ -75,7 +75,7 @@ contracts('XManBusinessLogic', (accounts) => {
   it('Returning XMan - Should return the identified', async () => {
     const GAS_LIMIT = 500000;
 
-    let XManQuery = await contractInstance.returnXMan({from: account[0], gas: GAS_LIMIT});
+    let XManQuery = await contractInstance.getXManCount({from: account[0], gas: GAS_LIMIT});
     assert.equals(
       XManQuery,
       0,
