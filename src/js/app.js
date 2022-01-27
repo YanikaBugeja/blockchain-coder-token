@@ -21,13 +21,13 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('XManToken.json', function(data) {
+    $.getJSON('XManBusinessLogic.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
-      var XManTokenArtifact = data;
-      App.contracts.XManToken = TruffleContract(XManTokenArtifact);
+      var XManBusinessLogicArtifact = data;
+      App.contracts.XManBusinessLogic= TruffleContract(XManBusinessLogicArtifact);
 
       // Set the provider for our contract.
-      App.contracts.XManToken.setProvider(App.web3Provider);
+      App.contracts.XManBusinessLogic.setProvider(App.web3Provider);
 
       // Use our contract to retieve and mark the adopted pets.
       return App.getBalances();
@@ -48,7 +48,7 @@ App = {
 
     console.log('Transfer ' + amount + ' XMT to ' + toAddress);
 
-    var XManTokenInstance;
+    var XManBusinessLogicInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
@@ -57,10 +57,10 @@ App = {
 
       var account = accounts[0];
 
-      App.contracts.XManoken.deployed().then(function(instance) {
-        XManTokenInstance = instance;
+      App.contracts.XManBusinessLogic.deployed().then(function(instance) {
+        XManBusinessLogicInstance = instance;
 
-        return XManTokenInstance.transfer(toAddress, amount, {from: account, gas: 100000});
+        return XManBusinessLogicInstance.transfer(toAddress, amount, {from: account, gas: 100000});
       }).then(function(result) {
         alert('Transfer Successful!');
         return App.getBalances();
@@ -73,7 +73,7 @@ App = {
   getBalances: function() {
     console.log('Getting balances...');
 
-    var XManTokenInstance;
+    var XManBusinessLogicInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
@@ -82,10 +82,10 @@ App = {
 
       var account = accounts[0];
 
-      App.contracts.XManToken.deployed().then(function(instance) {
-        XManTokenInstance = instance;
+      App.contracts.XManBusinessLogic.deployed().then(function(instance) {
+        XManBusinessLogicInstance = instance;
 
-        return XManTokenInstance.balanceOf(account);
+        return XManBusinessLogicInstance.balanceOf(account);
       }).then(function(result) {
         balance = result.c[0];
 
