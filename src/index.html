@@ -1,57 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>TutorialToken - Wallet</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blockchain Tokens Home Assignment</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">TutorialToken</h1>
-          <hr/>
-          <br/>
-        </div>
-      </div>
-
-      <div id="petsRow" class="row">
-        <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">My Wallet</h3>
-            </div>
-            <div class="panel-body">
-              <h4>Balance</h4>
-              <strong>Balance</strong>: <span id="TTBalance"></span> TT<br/><br/>
-              <h4>Transfer</h4>
-              <input type="text" class="form-control" id="TTTransferAddress" placeholder="Address" />
-              <input type="text" class="form-control" id="TTTransferAmount" placeholder="Amount" />
-              <button class="btn btn-primary" id="transferButton" type="button">Transfer</button>
-            </div>
-          </div>
-        </div>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-center">XMan Tokens</h1>
+        <h3 class="text-center">Blockchain Home Assignment</h3>
+        <h5 class="text-center">Yanika Bugeja - SWD 6.3A</h5>
+        <hr />
+        <br />
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+    <div class="row justify-content-center">
+      <div class="col-sm-4 col-sm-push-4">
+
+        <div class="card">
+          <div class="card-header"><strong>XMan Tokens Balance</strong> </div>
+          <div class="card-body">
+            <span id="XMTBalance"></span> XMT<br /><br />
+          </div>
+        </div>
+
+        <br /><br />
+
+        <div class="card">
+          <div class="card-header"><strong>Transfer XMan Tokens</strong> </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+            <input type="text" class="form-control" id="TransferAddress" placeholder="Address" />
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="TransferAmount" placeholder="Amount" />
+              </div>
+
+              <button class="btn btn-primary" id="TransferXMTButton" type="button">Transfer XMT</button>
+            </form>
+          </div>
+        </div>
+
+        <br /><br />
+
+        <div class="card">
+          <div class="card-header"><strong>Buy XMan Tokens</strong> </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" id="XManName" placeholder="XMan Name" />
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="XManAmount" placeholder="XMan Token (Min. 100 XMT)" />
+              </div>
+
+              <button class="btn btn-primary" id="CreateXManButton" type="button">Buy XMan</button>
+              <div id="CreateXManAlert"></div>
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/blockchainTokens.js"></script>
+</body>
 </html>
